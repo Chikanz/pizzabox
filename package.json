@@ -3,8 +3,8 @@
   "displayName": "Pizza Box",
   "author": { "name": "dook", "url": "https://duck.pizza" },
   "documentationUrl": "https://poly.pizza/docs/api",
-  "version": "1.0.0",
-  "unity": "2018.3",
+  "version": "1.0.1",
+  "unity": "2019.3",
   "description": "Import poly pizza models at run time",
   "dependencies": {
     "com.unity.cloud.gltfast": "6.7.0",
