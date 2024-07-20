@@ -1,0 +1,21 @@
+{
+  "name": "com.dook.pizzabox",
+  "displayName": "Pizza Box",
+  "author": { "name": "dook", "url": "https://duck.pizza" },
+  "documentationUrl": "https://poly.pizza/docs/api",
+  "version": "1.0.0",
+  "unity": "2018.3",
+  "description": "Import poly pizza models at run time",
+  "dependencies": {
+    "com.unity.cloud.gltfast": "6.7.0",
+    "com.cysharp.unitask": "2.5.5",
+    "com.unity.nuget.newtonsoft-json": "3.0.0"
+  },
+   "samples": [
+        {
+            "displayName": "Spawn and place popular models",
+            "description": "Contains a simple demo of spawning and placing models at a fixed scale",
+            "path": "Samples~/Spawn and place models"
+        }
+    ]
+}
