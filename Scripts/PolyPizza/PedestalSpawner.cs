@@ -10,7 +10,7 @@ using UnityEngine.Serialization;
 namespace PolyPizza
 {
     [RequireComponent(typeof(APIManager))]
-    public class Spawner : MonoBehaviour
+    public class PedestalSpawner : MonoBehaviour
     {
         public int width;
         public int height;
@@ -81,7 +81,7 @@ namespace PolyPizza
 
         private async void Spawn()
         {
-            var models = await APIManager.instance.GetPopular(platforms.Count + Exclude.Length);
+            var models = await APIManager.instance.GetPopular(platforms.Count + Exclude.Length, APIManager.Category.Animals);
 
             //exclude models
             models = Array.FindAll(models, (Model m) => !Exclude.Contains(m.Id)).ToArray();

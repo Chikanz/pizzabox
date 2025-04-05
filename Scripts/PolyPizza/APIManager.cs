@@ -20,7 +20,7 @@ namespace PolyPizza
 
         private const float MIN_BOUNDING_BOX_SIZE_FOR_SIZE_FIT = 0.001f;
 
-        const string URL = "https://api.poly.pizza/v1/";
+        const string URL = "https://api.poly.pizza/v1.1";
         public string APIKEY;
 
         [FormerlySerializedAs("CacheToFile")] public bool CacheModelsToFile = true;
@@ -161,18 +161,34 @@ namespace PolyPizza
             }
         }
 
+        public enum Category
+        {
+            FoodAndDrink = 0,
+            Clutter = 1,
+            Weapons = 2,
+            Transport = 3,
+            FurnitureAndDecor = 4,
+            Objects = 5,
+            Nature = 6,
+            Animals = 7,
+            BuildingsAndArchitecture = 8,
+            PeopleAndCharacters = 9,
+            ScenesAndLevels = 10,
+            Other = 11
+        }
+        
         /// <summary>
-        /// Get the top models of all time from the Poly Pizza API
+        /// Get the top models of all time from the Poly Pizza API by category
         /// </summary>
         /// <param name="limit">How many models to get. I think this caps at like 500 or something</param>
         /// <returns>Model object array</returns>
-        public async UniTask<Model[]> GetPopular(int limit)
+        public async UniTask<Model[]> GetPopular(int limit, Category category)
         {
             int pagesToGet = Mathf.CeilToInt(limit / 32.0f);
             List<Model> models = new List<Model>();
             for (int i = 0; i < pagesToGet; i++)
             {
-                var res = await getURL($"{URL}/search?limit=32&page={i}");
+                var res = await getURL($"{URL}/search?limit=32&page={i}&category={category}");
                 if (res != null)
                 {
                     var search = SearchResults.FromJson(res);
