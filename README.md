@@ -13,7 +13,6 @@ Requires Unity 2019.3+
 
 ## 🖥 Install
 - Make sure git is installed on your system
-- [Install glTFast](https://docs.unity3d.com/Packages/com.unity.cloud.gltfast@6.7/manual/installation.html).
 - [Install Unitask](https://github.com/Cysharp/UniTask?tab=readme-ov-file#install-via-git-url)
 - Open the package manager and click "Add from Git URL"
 - Paste this url `https://github.com/Chikanz/pizzabox.git`
